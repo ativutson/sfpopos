@@ -1,10 +1,11 @@
 import React from "react";
-import POPOSList from "./POPOSList";
+// import POPOSList from "./POPOSList";
+import './POPOSSpace.css';
 
 function POPOSSpace(props) {
     const { name, image, address } = props;
     return (
-        <div>
+        <div className="POPOSSpace">
             <img src={`${process.env.PUBLIC_URL}/images/${image}`} 
                 width="300" 
                 height="300" 
