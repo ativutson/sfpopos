@@ -1,40 +1,36 @@
 import React from "react";
 import POPOSSpace from "./POPOSSpace";
 import './POPOSList.css';
+import data from './sfpopos-data.json';
+
+// const spaces = data.map((obj) => {
+//     const { title, address, images } = obj
+  
+//     return (
+//       <POPOSSpace
+//         name={title}
+//         address={address}
+//         image={images[0]}
+//       />
+//     )
+//   })
 
 function POPOSList() {
+    const spaces = data.map((obj) => {
+        return (
+            <POPOSSpace
+                key={obj.title}
+                name={obj.title}
+                address={obj.address}
+                image={obj.images[0]}
+                hours={obj.hours}
+            />
+        );
+    });
+
     return (
         <div className="POPOSList">
-            <POPOSSpace 
-                name="50 California Street"
-                address="50 California St."
-                image="50-california-st.jpeg"
-            />
-            <POPOSSpace
-                name="100 Pine Street"
-                address="100 Pine St."
-                image="100-pine.jpeg" 
-            />
-            <POPOSSpace
-                name="101 California Street"
-                address="101 California"
-                image="101-california.jpeg"
-            />
-            <POPOSSpace
-                name="343 Sansome Roof Garden"
-                address="343 Sansome St."
-                image="343-sansome-roof-garden.jpeg"
-            />
-            <POPOSSpace
-                name="525 Market Street Plaza"
-                address="525 Market St."
-                image="525-market-street-plaza.jpeg"
-            />
-            <POPOSSpace
-                name="Citigroup Center"
-                address="1 Sansome St."
-                image="citigroup-center.jpeg"
-            />
+            { spaces }
         </div>
     );
 };
