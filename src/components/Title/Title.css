@@ -12,8 +12,8 @@
 
 .Title-Subtitle {
     color: rgba(255, 255, 255, 0.75);
-    /* text-align: center; */
 }
+
 
 .Title .nav-link {
     display: inline-block;
@@ -23,7 +23,7 @@
     text-decoration: none;
 }
 
-.Title .nav-link-active {
+.Title .active {
     color: black;
     border-bottom: 2px solid;
 }

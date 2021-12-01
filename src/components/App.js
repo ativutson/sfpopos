@@ -15,7 +15,7 @@ function App() {
         <Routes> 
             <Route exact path="/" element={<POPOSList />} />
             <Route path="/about" element={<About />} />
-            <Route path="/details/:id" element={(props) => <POPOSDetails {...props}/>} />
+            <Route path="/details/:id" element={<POPOSDetails />} />
         </Routes>
         <Footer />
       </div>

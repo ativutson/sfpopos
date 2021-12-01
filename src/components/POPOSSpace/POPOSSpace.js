@@ -7,8 +7,10 @@ function POPOSSpace(props) {
     return (
         <div className="POPOSSpace">
             <h1>
-                <Link to={`/details/${id}`}>
-                    {name}
+                <Link 
+                    className="POPOSSpace-title" 
+                    to={`/details/${id}`}>
+                    <h1>{name}</h1>
                 </Link>
             </h1>
             <Link to={`/details/${id}`}>
@@ -18,8 +20,10 @@ function POPOSSpace(props) {
                     alt="Hello" 
                 />
             </Link>
-            <div>{address}</div>
-            <h3>{hours}</h3>
+            <div className="POPOSSpace-info">
+                <div>{address}</div>
+                <div>{hours}</div>
+            </div>
         </div>
     );
 };
