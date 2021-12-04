@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import POPOSSpace from "../POPOSSpace/POPOSSpace";
 import './POPOSList.css';
-import data from '../../sfpopos-data.json';
+import data from '../../sfpopos-data.js';
 
 // const spaces = data.map((obj) => {
 //     const { title, address, images } = obj
@@ -17,12 +17,13 @@ import data from '../../sfpopos-data.json';
 
 function POPOSList() {
     const [ query, setQuery ] = useState('');
-    
-    const spaces = data.map((obj, i) => {
+
+    //Filter query then map the filtered array
+    const spaces = data.filter(obj => obj.title.includes(query) || obj.address.includes(query)).map((obj) => {//remove i from parameter to add id in obj
         return (
             <POPOSSpace
-                id={i}
-                key={obj.title}
+                id={obj.id}
+                key={`${obj.title}-${obj.id}`}
                 name={obj.title}
                 address={obj.address}
                 image={obj.images[0]}
