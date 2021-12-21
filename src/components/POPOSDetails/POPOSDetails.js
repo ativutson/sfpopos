@@ -18,7 +18,7 @@ function POPOSDetails(props) {
                 <h1 className="POPOSDetails-title">{title}</h1>
                 <p className="POPOSDetails-desc">{desc}</p>
                 <p className="POPOSDetails-hours">{hours}</p>
-                <p className="POPOSDetails-features">{features}</p>
+                <p className="POPOSDetails-features">{features.join(', ')}</p>
                 <POPOSFeatureList features={features} />
                 <p className="POPOSDetails-geo">{geo.lat} {geo.lon}</p>
             </div>
